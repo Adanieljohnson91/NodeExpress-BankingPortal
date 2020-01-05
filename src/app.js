@@ -19,10 +19,10 @@ const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json'), 'ut
 const users = JSON.parse(userData)
 
 
-app.get('/', (req,res)=> res.render('index', {title: 'Accounts summery', accounts}))
+app.get('/', (req,res)=> res.render('index', {title: 'Account Summary', accounts}))
 app.get('/savings', (req,res)=>res.render('account', {account: accounts.savings}))
 app.get('/checking', (req,res)=>res.render('account', {account: accounts.checking}))
 app.get('/credit',(req,res)=>res.render('account', {account: accounts.credit}))
-app.get('/profile', (req,res)=>res.render('profile', {user: user[0]}))
+app.get('/profile', (req,res)=>res.render('profile', {user: users[0]}))
 
 app.listen(3000, ()=>console.log('PS Project Runnin gon port 3000'))
